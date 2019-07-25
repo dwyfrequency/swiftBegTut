@@ -20,6 +20,15 @@ class Person {
 }
 
 class BlogPost {
+    var fullTitle:String { // computed property 
+        if title != nil && author != nil {
+            return title! + " " + author!.name
+        } else if title != nil {
+            return title!
+        } else {
+            return "No title"
+        }
+    }
     var title:String? //
     var body:String = "hey"
     var author:Person?
@@ -38,3 +47,4 @@ if let titl = b.title { // safer
     print(titl)
 }
 
+print(b.fullTitle)
