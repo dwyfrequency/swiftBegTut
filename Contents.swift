@@ -20,7 +20,8 @@ class Person {
 }
 
 class BlogPost {
-    var fullTitle:String { // computed property 
+    
+    var fullTitle:String { // computed property
         if title != nil && author != nil {
             return title! + " " + author!.name
         } else if title != nil {
@@ -29,10 +30,15 @@ class BlogPost {
             return "No title"
         }
     }
-    var title:String? //
+    var title:String?
     var body:String = "hey"
     var author:Person?
     var numComments:Int = 0
+    var paper:Int
+    // you always have to specify a default value, declare it as optional ?, force unwrap it ! or set in init
+    init() {
+        paper = 12
+    }
 }
 
 let b = BlogPost()
@@ -48,3 +54,5 @@ if let titl = b.title { // safer
 }
 
 print(b.fullTitle)
+print(b.paper)
+
